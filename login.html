@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+    <style>
+        /* Margin e o padding zerado, para que o body fique colado na tela do dispositivo */
+
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        /* Configurações de fundo do  formulário com as propriedades vh e display flex para uma maior responsividade  */
+     
+        form {
+        height: 100vh;
+        background-color: rgb(0, 0, 0);
+        display: flex; 
+         
+       }
+
+       /*Configurações do conteúdo do formulário, */
+       fieldset{
+        display: grid;
+        text-align: left;
+        background-image: linear-gradient(to top, rgb(190, 0, 0), rgb(8, 1, 1)) ;
+        margin: auto;
+        height: 60%;
+        width: 40%;
+        border-radius: 10px;
+        box-shadow: red 3px 5px 20px 5px ;
+       }
+
+       /* Configurações do nome que está na borda do fieldset */
+       fieldset legend{
+        text-align: left;
+        color: rgb(247, 241, 240);
+        font-size: 3.4vw;
+        font-weight: bolder;
+       }
+
+       /*Configurações gerais do label(nomes acima da caixa de entrada )*/
+       label{
+       color: rgb(255, 255, 255);
+       margin-left: 12px;
+       font-size: 3vw;
+       font-weight:lighter;
+       font-style: italic;
+       text-transform: capitalize;
+
+
+       }
+       /* Confugrações do label usuário*/
+       label.usuariolog{
+        text-align: center;
+        margin-top: 20px;
+        margin-right: 5px;
+        margin-bottom: 3vh;
+        font-size: 2.5vw;
+        
+
+       }
+       /*Configurações do label senha*/
+       label.senhalogin{
+        display: inline-block;
+        text-align: center;
+        margin-top: -5vh;
+        margin-right: 5px;
+        margin-bottom: 3vh;
+        font-size: 2.5vw;
+       }
+
+       /*Configurações gerais das caixas de entrada usuário e senha*/
+       input{
+        margin-right: 6vw;
+        margin-left: 6vw;
+        border-color: rgba(251, 251, 252, 0.589);
+        background-color: rgba(247, 241, 241, 0.486);
+        color: white;
+        font-weight: bolder;
+        border-radius: 8px;
+        height: 22px;
+
+       }
+        /*Configuração para quando o usuário clicar na caixa*/
+        input:focus{
+        background-color: rgba(0, 0, 0, 0);
+        box-shadow: white 2px 2px 12px 2px;
+        border-color: rgba(0, 0, 0, 0);
+       }
+        /* Posicionando a caixa de senha */
+       input.passwordlog{
+        margin-top: -9vh;
+        margin-bottom: 7vh;
+       }
+        .cxusuario{
+            margin-top: -9vh;
+        }
+       /*Posicionando o botão entrar*/
+       fieldset.botao{
+        position: relative;
+         border-bottom: 20vh;
+       }
+       
+       /*Posicionando o botão entrar, configurando a div que envolve meu nome*/
+       div .container{
+        position: absolute;
+       }
+        
+       /* Ainda posicionando meu nome, para que ele acompanhe o tamano do fieldset */
+       div.subcontainer{
+        position: relative;
+        top: 70%;
+        text-align: center;
+        color: rgba(240, 248, 255, 0.027); 
+        padding-bottom: 4px;
+        border-radius: 0px 0px 10px 10px;
+       }
+
+       /*Configurando meu nome ao passar o mouse por cima */
+       div.subcontainer:hover{
+        transition: 2s;
+         color: white;
+         background-color: rgba(0, 0, 0, 0.356);
+       }
+
+       /*fundo do formulário*/
+       form{
+        background-color: rgb(0, 0, 0);
+       }
+       
+       /*configurando a div que envolve o botão entrar */
+        .containerdobotao{
+            display: flex;
+            align-items: center;
+            justify-content: right;
+        }
+
+        /*Configurando o botão*/
+       .botao{
+        margin-top: -15vh;
+        margin-right: 6vw;
+        border-radius: 8px;
+        height: 4vh;
+        width: 10vw;
+        min-width: 10vw;
+        max-width: 15vw;
+        background-image:linear-gradient(to right, rgb(65, 47, 47), rgb(236, 12, 12)) ;
+        color: white;
+        font-size: 1.5vw;
+        font-style: italic;
+        font-weight: bolder;
+        border-style: solid;
+        border-color: rgba(240, 255, 255, 0.5);
+       }
+
+       /*Configuração do botão ao passar o mouse em cima */
+       .botao:hover{
+        background-image:linear-gradient(to right, rgb(0, 0, 0), rgb(165, 0, 0)) ;
+        border-color: white;
+        transition-duration: 1s;
+        animation:alternate;
+
+       }
+        /*Configurando o botão para quando o usuário clicar nele*/        
+       .botao:active{
+        background-color: rgba(112, 108, 108, 0.356);
+       }
+       
+       
+       </style>
+</head>
+<body>
+      
+       
+    
+        <form action="cadastro.php" method="post" >
+            
+        <fieldset>
+
+        <legend>Login</legend>
+        <label for="usuario" class="usuariolog">usuário</label> 
+
+        <input type="text" name="usu" id="Usuário" required maxlength="10" minlength="5" size="20" class="cxusuario"> 
+
+        <label for="senhalog" class="senhalogin">senha</label> 
+
+        <input type="password" class="passwordlog" required minlength="6" size="20">
+
+        <div class="containerdobotao"> <button type="submit" class="botao"> Entrar </button>
+        </div>
+        
+         <div class="container">
+             <div class="subcontainer">@douglas_castelo</div>
+         </div>
+        </fieldset>
+
+        
+        </form>
+<!-- Projeto criado por: Douglas Castelo Branco de Sousa-->
+</body>
+
+</html>
